@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+ class Cal{
+    public static void main(String[] args) {
+        System.out.println("  STUDENT GRADE CALCULATOR  ");
+        int Sub;
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("\nEnter  total number of subjects :");
+        Sub= Sc.nextInt();
+
+        int Total,SUM,AP;
+        SUM = 0;
+
+        int [] marks = new int[Sub];
+        for (int i=0; i< Sub; i++ ){
+            System.out.println("\nEnter subject name : ");
+            String s = Sc.next();
+            System.out.println("\nEnter marks of " +s+ ":");
+            marks[i] = Sc.nextInt();
+            SUM = marks[i]+SUM;
+
+        }
+        Total = Sub*100;
+        AP = SUM/Sub;
+
+        System.out.println("\n     RESULT     ");
+
+        System.out.println("\n________________");
+        System.out.println("\nYOUR TOTAL MARKS IS " +SUM+ " OUT OF " +Total );
+        System.out.println("\nPERCENTAGE IS : " +AP+"%");
+        if (AP >= 90){
+            System.out.println("Your Grade is A+" );}
+        else if (AP >= 80){
+            System.out.println("Your Grade is A");}
+        else if (AP >= 70){
+            System.out.println("Your Grade is B+");}
+        else if (AP >= 60){
+            System.out.println("Your Grade is B");}
+        else if (AP >= 50){
+            System.out.println("Your Grade is C");}
+        else if (AP >= 40){
+            System.out.println("Your Grade is D");}
+        else {
+            System.out.println("Your Grade is F");}
+
+
+    }
+}
