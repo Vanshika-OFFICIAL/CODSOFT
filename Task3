@@ -1,0 +1,73 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+                Scanner s= new Scanner(System.in);
+                operation o= new operation();
+                int op;
+                System.out.println("INDIAN BANK ATM");
+
+
+                op=0;
+                while (op != 4){
+                    System.out.println("\n1. check balance");
+                    System.out.println("2. deposit money");
+                    System.out.println("3. withdraw money");
+                    System.out.println("4.exit");
+                    System.out.println("\nCHOOSE ONE OPTION");
+                    op = s.nextInt();
+                    if (op ==1){
+                        o.checkbalance();
+                    }
+                    else if (op ==2){
+                        o.deposit();
+                    }
+                    else if (op==3){
+                        o.withdraw();
+                    }
+                    else if (op==4){
+                        System.out.println("\nTHANKS FOR VISITING");
+
+                    }
+                    else{
+                        System.out.println("INVALID INPUT");
+                        System.out.println("TRY CHOOSING NUMBERS SUCH AS 1,2,3,4");
+                    }
+                }
+            }
+        }
+        class operation{
+            int bm=0;
+            Scanner s= new Scanner(System.in);
+            int dm,wm;
+            public void checkbalance(){
+                System.out.println("CURRENT BALANCE  : " +bm);
+            }
+            public void deposit(){
+                System.out.println("ENTER AMOUNT TO DEPOSIT: ");
+                dm = s.nextInt();
+                if (dm >=0){
+                    bm = bm+dm;
+                    System.out.println(" SUCCESFUL");
+                    System.out.println("CLOSING BALANCE: " +bm);
+                }
+                else{
+                    System.out.println("FAILED");
+                    System.out.println("TRY AGAIN ");
+                }
+            }
+            public void withdraw(){
+                System.out.println("ENTER AMOUNT TO WITHDRAW: ");
+                wm = s.nextInt();
+                if (wm <= bm){
+                    bm= bm-wm;
+                    System.out.println("SUCCESFUL");
+                    System.out.println("CLOSING BALANCE: " +bm);
+                }
+                else {
+                    System.out.println("FAILED");
+                    System.out.println(" INSUFFICIENT BALANCE");
+                    System.out.println("YOUR BALANCE IS :" +bm);
+                    System.out.println("TRY AGAIN ");
+                }
+            }
+        }
